@@ -27,6 +27,48 @@ function repeater(str) {
     .join("");
 }
 
-console.log(repeater("Hello")); // "HHeelllloo"
-console.log(repeater("Good job!")); // "GGoooodd  jjoobb!!"
-console.log(repeater("")); // ""
+// console.log(repeater("Hello")); // "HHeelllloo"
+// console.log(repeater("Good job!")); // "GGoooodd  jjoobb!!"
+// console.log(repeater("")); // ""
+
+function doubleConsonants(str) {
+  const CONSONANTS = [
+    "b",
+    "c",
+    "d",
+    "f",
+    "g",
+    "h",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+  let finalString = [];
+
+  str.split("").map((char) => {
+    if (CONSONANTS.includes(char.toLowerCase())) {
+      finalString.push(char, char);
+    } else {
+      finalString.push(char);
+    }
+  });
+  // console.log(finalString);
+  return finalString.join("");
+}
+
+console.log(doubleConsonants("String")); // "SSttrrinngg"
+console.log(doubleConsonants("Hello-World!")); // "HHellllo-WWorrlldd!"
+console.log(doubleConsonants("July 4th")); // "JJullyy 4tthh"
+console.log(doubleConsonants("")); // ""
