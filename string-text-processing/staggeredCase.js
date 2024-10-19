@@ -17,7 +17,7 @@ even indexes are capped so 1, 3, 5, etc ...
 
 //refactor using split and map
 
-function staggeredCase(words) {
+function staggeredCase1(words) {
   return words
     .split("")
     .map((word, idx) => {
@@ -30,6 +30,34 @@ function staggeredCase(words) {
     .join("");
 }
 
-console.log(staggeredCase("I Love Launch School!")); // "I LoVe lAuNcH ScHoOl!"
-console.log(staggeredCase("ALL_CAPS")); // "AlL_CaPs"
-console.log(staggeredCase("ignore 77 the 4444 numbers")); // "IgNoRe 77 ThE 4444 nUmBeRs"
+// console.log(staggeredCase("I Love Launch School!")); // "I LoVe lAuNcH ScHoOl!"
+// console.log(staggeredCase("ALL_CAPS")); // "AlL_CaPs"
+// console.log(staggeredCase("ignore 77 the 4444 numbers")); // "IgNoRe 77 ThE 4444 nUmBeRs"
+
+function staggeredCase(string) {
+  let needUpper = true;
+
+  return string
+    .split("")
+    .map((char) => {
+      char = char.toLowerCase();
+      if (char >= "a" && char <= "z") {
+        if (needUpper) {
+          needUpper = false;
+          return char.toUpperCase();
+        } else {
+          needUpper = true;
+          return char.toLowerCase();
+        }
+      } else {
+        return char;
+      }
+    })
+    .join("");
+}
+
+console.log(staggeredCase("I Love Launch School!") === "I lOvE lAuNcH sChOoL!");
+console.log(staggeredCase("ALL CAPS") === "AlL cApS");
+console.log(
+  staggeredCase("ignore 77 the 444 numbers") === "IgNoRe 77 ThE 444 nUmBeRs"
+);
