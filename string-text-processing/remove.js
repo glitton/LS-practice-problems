@@ -1,12 +1,18 @@
 const vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
 
-function removeVowels(strArray) {
+function removeVowelsOG(strArray) {
   return strArray.map((str) =>
     str
       .split("")
       .filter((letter) => !vowels.includes(letter))
       .join("")
   );
+}
+
+//regex version
+
+function removeVowels(array) {
+  return array.map((word) => word.replace(/[aeiou]/gi, ""));
 }
 
 /*
@@ -16,6 +22,10 @@ function removeVowels(strArray) {
 - Return new array
 */
 
-console.log(removeVowels(["abcdefghijklmnopqrstuvwxyz"]));
-console.log(removeVowels(["green", "YELLOW", "black", "white"]));
-console.log(removeVowels(["ABC", "AEIOU", "XYZ"]));
+// function removeVowels(array){
+
+// }
+
+// console.log(removeVowels(["abcdefghijklmnopqrstuvwxyz"]));
+// console.log(removeVowels(["green", "YELLOW", "black", "white"]));
+// console.log(removeVowels(["ABC", "AEIOU", "XYZ"]));
