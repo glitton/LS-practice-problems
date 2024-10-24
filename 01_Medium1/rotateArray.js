@@ -99,11 +99,27 @@ function rotateString(string) {
   return string.slice(1).concat(string[0]);
 }
 
-console.log(rotateRightmostDigits(735291, 1)); // 735291
-console.log(rotateRightmostDigits(735291, 2)); // 735219
-console.log(rotateRightmostDigits(735291, 3)); // 735912
-console.log(rotateRightmostDigits(735291, 4)); // 732915
-console.log(rotateRightmostDigits(735291, 5)); // 752913
-console.log(rotateRightmostDigits(735291, 6)); // 352917
+// console.log(rotateRightmostDigits(735291, 1)); // 735291
+// console.log(rotateRightmostDigits(735291, 2)); // 735219
+// console.log(rotateRightmostDigits(735291, 3)); // 735912
+// console.log(rotateRightmostDigits(735291, 4)); // 732915
+// console.log(rotateRightmostDigits(735291, 5)); // 752913
+// console.log(rotateRightmostDigits(735291, 6)); // 352917
 
 // console.log(rotateString("735291"));
+
+function maxRotation(number) {
+  let loop = String(number).length;
+  let count = loop;
+  for (let idx = 0; idx < loop; idx++) {
+    number = rotateRightmostDigits(number, count);
+    count--;
+  }
+  return number;
+}
+
+console.log(maxRotation(735291));
+console.log(maxRotation(3));
+console.log(maxRotation(35));
+console.log(maxRotation(105));
+console.log(maxRotation(8703529146));
