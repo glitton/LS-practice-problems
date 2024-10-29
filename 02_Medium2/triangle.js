@@ -25,52 +25,52 @@ A:
 - return string
 */
 
-function triangleMine(side1, side2, side3) {
-  let triangleArray = [side1, side2, side3].sort();
+// function triangleMine(side1, side2, side3) {
+//   let triangleArray = [side1, side2, side3].sort();
 
-  if (isValidTriangle(triangleArray)) return "invalid";
+//   if (isValidTriangle(triangleArray)) return "invalid";
 
-  if (side1 === side2 && side2 === side3) {
-    return "equilateral";
-  } else if (side1 === side2 || side1 === side3 || side2 === side3) {
-    return "isosceles";
-  } else {
-    return "scalene";
-  }
-}
+//   if (side1 === side2 && side2 === side3) {
+//     return "equilateral";
+//   } else if (side1 === side2 || side1 === side3 || side2 === side3) {
+//     return "isosceles";
+//   } else {
+//     return "scalene";
+//   }
+// }
 
-function isValidTriangle(array) {
-  let [side1, side2, side3] = array;
-  return side1 === 0 || side2 === 0 || side3 === 0 || side1 + side2 < side3;
-}
+// function isValidTriangle(array) {
+//   let [side1, side2, side3] = array;
+//   return side1 === 0 || side2 === 0 || side3 === 0 || side1 + side2 < side3;
+// }
 
-console.log(triangle(3, 3, 3)); // "equilateral"
-console.log(triangle(3, 3, 1.5)); // "isosceles"
-console.log(triangle(3, 4, 5)); // "scalene"
-console.log(triangle(0, 3, 3)); // "invalid"
-console.log(triangle(3, 1, 1)); // "invalid"
+// console.log(triangle(3, 3, 3)); // "equilateral"
+// console.log(triangle(3, 3, 1.5)); // "isosceles"
+// console.log(triangle(3, 4, 5)); // "scalene"
+// console.log(triangle(0, 3, 3)); // "invalid"
+// console.log(triangle(3, 1, 1)); // "invalid"
 
 // console.log(isValidTriangle([0, 3, 3]));
 
 //Launch School version
 
-function triangle(side1, side2, side3) {
-  if (!isValid(side1, side2, side3)) {
-    return "invalid";
-  } else if (side1 === side2 && side2 === side3) {
-    return "equilateral";
-  } else if (side1 === side2 || side1 === side3 || side2 === side3) {
-    return "isosceles";
-  } else {
-    return "scalene";
-  }
-}
+// function triangle1(side1, side2, side3) {
+//   if (!isValid(side1, side2, side3)) {
+//     return "invalid";
+//   } else if (side1 === side2 && side2 === side3) {
+//     return "equilateral";
+//   } else if (side1 === side2 || side1 === side3 || side2 === side3) {
+//     return "isosceles";
+//   } else {
+//     return "scalene";
+//   }
+// }
 
-function isValid(side1, side2, side3) {
-  let perimeter = side1 + side2 + side3;
-  let longest = Math.max(side1, side2, side3);
-  let shortest = Math.min(side1, side2, side3);
-  let middle = perimeter - longest - shortest;
+// function isValid(side1, side2, side3) {
+//   let perimeter = side1 + side2 + side3;
+//   let longest = Math.max(side1, side2, side3);
+//   let shortest = Math.min(side1, side2, side3);
+//   let middle = perimeter - longest - shortest;
 
-  return shortest > 0 && shortest + middle > longest;
-}
+//   return shortest > 0 && shortest + middle > longest;
+// }
