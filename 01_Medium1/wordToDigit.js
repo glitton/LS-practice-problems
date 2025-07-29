@@ -54,7 +54,7 @@ function wordToDigit(string) {
     if (NUM_WORDS.hasOwnProperty(word)) {
       finalSentence.push(NUM_WORDS[word] + punctuation);
     } else {
-      finalSentence.push(word);
+      finalSentence.push(word + punctuation);
     }
   }
 

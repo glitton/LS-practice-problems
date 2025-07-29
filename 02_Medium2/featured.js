@@ -19,7 +19,9 @@ A:
 - Based on the input integer, find the next multiple of 7
 */
 
-function featured(num) {}
+function featured(num) {
+  
+}
 
 featured(12); // 21
 featured(20); // 21
