@@ -298,3 +298,51 @@ function wordSizes(sentence) {
 // p(wordSizes("Hey diddle diddle, the cat and the fiddle!")); // { "3": 5, "6": 3 }
 // p(wordSizes("What's up doc?")); // { "2": 1, "3": 1, "5": 1 }
 // p(wordSizes("")); // {}
+
+function swap(str) {
+  return str
+    .split(" ")
+    .map((word) => {
+      if (word.length === 1) {
+        return word;
+      } else {
+        return word[word.length - 1] + word.slice(1, word.length - 1) + word[0];
+      }
+    })
+    .join(" ");
+}
+
+// p(swap("Oh what a wonderful day it is")); // "hO thaw a londerfuw yad ti si"
+// p(swap("Abcde")); // "ebcdA"
+// p(swap("a")); // "a"
+
+function union(arr1, arr2) {
+  let result = [...arr1];
+
+  arr2.forEach((el) => {
+    if (!result.includes(el)) {
+      result.push(el);
+    }
+  });
+  // console.log(result === arr1);
+  return result;
+}
+
+// p(union([1, 3, 5], [3, 6, 9])); // [1, 3, 5, 6, 9]
+
+function interleave(arr1, arr2) {
+  let result = [];
+
+  arr1.forEach((el, idx) => result.push(el, arr2[idx]));
+  return result;
+}
+
+function interleave(arr1, arr2) {
+  return arr1
+    .map((el, idx) => {
+      return [el, arr2[idx]];
+    })
+    .flat();
+}
+
+// p(interleave([1, 2, 3], ["a", "b", "c"]));
