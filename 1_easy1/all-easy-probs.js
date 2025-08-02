@@ -338,11 +338,11 @@ function interleave(arr1, arr2) {
 }
 
 function interleave(arr1, arr2) {
-  return arr1
-    .map((el, idx) => {
-      return [el, arr2[idx]];
-    })
-    .flat();
+  let combined = arr1.map((el, idx) => {
+    return [el, arr2[idx]];
+  });
+
+  return combined.reduce((final, subArr) => final.concat(subArr), []);
 }
 
-// p(interleave([1, 2, 3], ["a", "b", "c"]));
+p(interleave([1, 2, 3], ["a", "b", "c"]));
